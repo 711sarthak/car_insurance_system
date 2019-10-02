@@ -85,15 +85,17 @@ class CalculatorBrain {
       return discou;
   }
   double insuType(){
-    base=insuType();
+
+    base=ecPrice();
     dep=timeDep();
     discou=disco();
     var price = double.parse(orgPri);
     iDV= price-dep;
     odc=iDV-discou;
     if(it=='3rd party'){
-      finalPrice=ecPric;
+      finalPrice=iDV;//ecPric+dep;
       return finalPrice;
+
     }
     else if(it=='Own Damage Cover'){
       finalPrice=odc;
